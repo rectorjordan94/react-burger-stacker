@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Ingredients extends Component {
-    render() {
-        const ingredients = this.props.ingredients.map((item, index) => {
+const Ingredients = (props) => {
+        const ingredients = props.ingredients.map((item, index) => {
             return (
                 <form key={index}>
-                    <button type="submit" value={JSON.stringify(item)} onClick={this.props.onClick} style={{backgroundColor: `${item.color}`}}>{item.name}</button>
+                    <button type="submit" value={JSON.stringify(item)} onClick={props.onClick} style={{backgroundColor: `${item.color}`}}>{item.name}</button>
                 </form>
             )
         })
@@ -16,6 +15,6 @@ class Ingredients extends Component {
             </div>
         )
     }
-}
+
 
 export default Ingredients

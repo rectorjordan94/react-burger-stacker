@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class BurgerStack extends Component {
-    render() {
-        const burger = this.props.burger.map((item, index) => {
+const BurgerStack = (props) => {
+        const burger = props.burger.map((item, index) => {
             return (
                 <form key={index}>
                     <button type="submit" value={item} style={{backgroundColor: `${item.color}`}}>{item.name}</button>
@@ -13,10 +12,10 @@ class BurgerStack extends Component {
         return (
             <div>
                 {burger}
-                <button className='clear' type="submit" onClick={this.props.onClick}>Clear Burger</button>
+                <button className='clear' type="submit" onClick={props.onClick}>Clear Burger</button>
             </div>
         )
     }
-}
+
 
 export default BurgerStack

@@ -1,15 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BurgerStack from './BurgerStack'
 
-class BurgerPane extends Component {
-    render() {
+const BurgerPane = (props) => {
         return (
             <div>
                 <h1>Burger Pane:</h1>
-                <BurgerStack burger={this.props.burger} onClick={this.props.onClick}/>
+                <BurgerStack burger={props.burger} onClick={props.onClick}/>
             </div>
         )
     }
-}
 
 export default BurgerPane
