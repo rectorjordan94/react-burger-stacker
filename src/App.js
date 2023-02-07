@@ -4,7 +4,7 @@ import IngredientList from './components/IngredientList';
 import React from 'react'
 import { useState } from 'react'
 
-const ingredients = [
+const ingredientArray = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
   {name: 'Sesame Bun', color: 'sandybrown'},
   {name: 'Gluten Free Bun', color: 'peru'},
@@ -20,7 +20,7 @@ const ingredients = [
 ]
 
 const App = () => {
-  // const [ingredients] = useState(ingredientArray)
+  const [ingredients, setIngredients] = useState(ingredientArray)
   const [burger, setBurger] = useState([])
 
   const handleClick = (e) => {
@@ -30,7 +30,7 @@ const App = () => {
     const chosenIngredient = JSON.parse(e.target.value)
     // find index of the chosen ingredient
     // remove that value from the array of ingredients using splice
-    setBurger({ ...burger, chosenIngredient })
+    setBurger(prevBurger => [chosenIngredient, ...prevBurger])
     // add the removed ingredient to the burger array
   }
   
